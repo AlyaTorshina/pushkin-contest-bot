@@ -1,0 +1,14 @@
+<table>
+     <% @history.each do |item| %>
+     <tr>
+       <td><%= item.question %></td>
+       <td><%= item.identifier %></td>
+       <td><%= item.level %></td>
+       <td><%= item.time %></td>
+       <td><%= item.answer %></td>
+     </tr>
+     <% end %>
+</table>
+<div>
+  <%= will_paginate @history %>
+</div>

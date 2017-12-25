@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  question: MyString
+  id: 1
+  level: 1
+  time: 2017-12-25 12:27:32
+  answer: MyString
+
+two:
+  question: MyString
+  id: 1
+  level: 1
+  time: 2017-12-25 12:27:32
+  answer: MyString

@@ -1,0 +1,2 @@
+class SortedLine < ApplicationRecord
+end

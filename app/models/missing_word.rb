@@ -1,0 +1,2 @@
+class MissingWord < ApplicationRecord
+end

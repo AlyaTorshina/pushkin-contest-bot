@@ -1,0 +1,2 @@
+class LineWithTitle < ApplicationRecord
+end
