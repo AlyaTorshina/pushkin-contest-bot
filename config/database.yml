@@ -84,4 +84,5 @@ production:
   <<: *default
   database: pushkin_production
   username: deployer
-  password: <%= ENV['PUSHKIN-BOT_DATABASE_PASSWORD'] %>
+  password: '1234'
+  #password: <%= ENV['PUSHKIN-BOT_DATABASE_PASSWORD'] %>
