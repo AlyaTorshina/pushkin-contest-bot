@@ -30,7 +30,6 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 gem 'will_paginate'
-gem 'sidekiq'
 
 
 # Use Capistrano for deployment
@@ -53,7 +52,7 @@ group :development do
   gem 'capistrano-bundler'
   gem 'capistrano-rvm'
   gem 'capistrano-rails'
-  #gem 'capistrano-sidekiq'
+  gem 'capistrano-sidekiq'
   gem 'capistrano3-puma', github: "seuros/capistrano-puma"
   gem 'capistrano-db-tasks'
   gem 'spring'
