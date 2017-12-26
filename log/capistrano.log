@@ -1,0 +1,45 @@
+# Logfile created on 2017-12-26 19:34:02 +0300 by logger.rb/56815
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-12-26 19:34:02 +0300 cap production deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [04e4e6f3] Running [ -d ~/.rvm ] as deploy@92.53.91.95
+ DEBUG [04e4e6f3] Command: [ -d ~/.rvm ]
+ DEBUG [04e4e6f3] Finished in 0.893 seconds with exit status 0 (successful).
+ DEBUG [18bc1007] Running ~/.rvm/bin/rvm version as deploy@92.53.91.95
+ DEBUG [18bc1007] Command: ~/.rvm/bin/rvm version
+ DEBUG [18bc1007] 	rvm 1.29.3 (master) by Michal Papis, Piotr Kuczynski, Wayne E. Seguin [https://rvm.io]
+ DEBUG [18bc1007] Finished in 0.489 seconds with exit status 0 (successful).
+ DEBUG [f56e9e14] Running ~/.rvm/bin/rvm current as deploy@92.53.91.95
+ DEBUG [f56e9e14] Command: ~/.rvm/bin/rvm current
+ DEBUG [f56e9e14] 	ruby-2.4.1
+ DEBUG [f56e9e14] Finished in 0.626 seconds with exit status 0 (successful).
+ DEBUG [75a3d209] Running ~/.rvm/bin/rvm 2.4.1@pushkin-bot do ruby --version as deploy@92.53.91.95
+ DEBUG [75a3d209] Command: ~/.rvm/bin/rvm 2.4.1@pushkin-bot do ruby --version
+ DEBUG [75a3d209] 	ruby 2.4.1p111 (2017-03-22 revision 58053) [x86_64-linux]
+ DEBUG [75a3d209] Finished in 0.639 seconds with exit status 0 (successful).
+  INFO [be08c499] Running /usr/bin/env mkdir -p /tmp as deploy@92.53.91.95
+ DEBUG [be08c499] Command: /usr/bin/env mkdir -p /tmp
+  INFO [be08c499] Finished in 0.231 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-pushkin-bot-production-alya.sh 0.0%
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-12-26 19:35:42 +0300 cap production deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [0012c501] Running [ -d ~/.rvm ] as deploy@92.53.91.95
+ DEBUG [0012c501] Command: [ -d ~/.rvm ]
+ DEBUG [0012c501] Finished in 0.939 seconds with exit status 0 (successful).
+ DEBUG [aae84a9c] Running ~/.rvm/bin/rvm version as deploy@92.53.91.95
+ DEBUG [aae84a9c] Command: ~/.rvm/bin/rvm version
+ DEBUG [aae84a9c] 	rvm 1.29.3 (master) by Michal Papis, Piotr Kuczynski, Wayne E. Seguin [https://rvm.io]
+ DEBUG [aae84a9c] Finished in 0.354 seconds with exit status 0 (successful).
+ DEBUG [8b3116cf] Running ~/.rvm/bin/rvm current as deploy@92.53.91.95
+ DEBUG [8b3116cf] Command: ~/.rvm/bin/rvm current
+ DEBUG [8b3116cf] 	ruby-2.4.1
+ DEBUG [8b3116cf] Finished in 0.366 seconds with exit status 0 (successful).
+ DEBUG [ac4e0424] Running ~/.rvm/bin/rvm 2.4.1@pushkin-bot do ruby --version as deploy@92.53.91.95
+ DEBUG [ac4e0424] Command: ~/.rvm/bin/rvm 2.4.1@pushkin-bot do ruby --version
+ DEBUG [ac4e0424] 	ruby 2.4.1p111 (2017-03-22 revision 58053) [x86_64-linux]
+ DEBUG [ac4e0424] Finished in 0.753 seconds with exit status 0 (successful).
+  INFO [39d66905] Running /usr/bin/env mkdir -p /tmp as deploy@92.53.91.95
+ DEBUG [39d66905] Command: /usr/bin/env mkdir -p /tmp
+  INFO [39d66905] Finished in 0.191 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-pushkin-bot-production-alya.sh 0.0%
