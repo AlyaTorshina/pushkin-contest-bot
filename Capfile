@@ -9,8 +9,8 @@ require 'capistrano/rails/migrations'
 require 'capistrano/sidekiq'
 require 'capistrano/puma'
 require 'capistrano/puma/nginx'
-require "capistrano/scm/git"
-install_plugin Capistrano::SCM::Git
+#require "capistrano/scm/git"
+#install_plugin Capistrano::SCM::Git
 # install_plugin Capistrano::Puma
 
 # Loads custom tasks from `lib/capistrano/tasks' if you have any defined.
