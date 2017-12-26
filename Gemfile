@@ -52,7 +52,7 @@ group :development do
   gem 'capistrano-bundler'
   gem 'capistrano-rvm'
   gem 'capistrano-rails'
-  gem 'capistrano-sidekiq'
+  #gem 'capistrano-sidekiq'
   gem 'capistrano3-puma', github: "seuros/capistrano-puma"
   gem 'capistrano-db-tasks'
   gem 'spring'
