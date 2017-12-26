@@ -14,7 +14,7 @@ test:
   pool: 5
   username: postgres
 
-development:
+production:
   adapter: postgresql
   encoding: unicode
   database: pushkin_production
