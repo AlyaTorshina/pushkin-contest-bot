@@ -5,9 +5,12 @@
 
 set :branch, 'master'
 set :rails_env, 'production'
-set :puma_env, 'production'
+set :unicorn_env, 'production'
 
-server "92.53.91.95", user: "deployer", roles: %w{app db web}
+set :puma_threads, [4, 12]
+set :puma_workers, 2
+
+server '92.53.91.95', user: 'deployer', roles: %w{app web db sidekiq}
 # server "example.com", user: "deploy", roles: %w{app web}, other_property: :other_value
 # server "db.example.com", user: "deploy", roles: %w{db}
 
