@@ -8,9 +8,9 @@ set :linked_dirs, %w{log tmp/pids public/assets tmp/cache tmp/sockets vendor/bun
 set :ssh_options, { :forward_agent => true }
 set :pry, false
 set :rvm_ruby_version, '2.4.1@pushkin-bot'
-#set :sidekiq_config, "#{current_path}/config/sidekiq.yml"
-#set :sidekiq_processes, 2
-#set :sidekiq_log, "#{current_path}/log/sidekiq.log"
-#set :sidekiq_role, :sidekiq
+set :sidekiq_config, "#{current_path}/config/sidekiq.yml"
+set :sidekiq_processes, 2
+set :sidekiq_log, "#{current_path}/log/sidekiq.log"
+set :sidekiq_role, :sidekiq
 set :puma_preload_app, true
 set :puma_init_active_record, true
