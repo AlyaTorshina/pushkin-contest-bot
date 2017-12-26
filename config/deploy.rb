@@ -1,4 +1,4 @@
-lock '3.5.0'
+lock '3.7.0'
 
 set :application, 'pushkin-bot'
 set :repo_url, 'git@github.com:AlyaTorshina/pushkin-contest-bot.git'
