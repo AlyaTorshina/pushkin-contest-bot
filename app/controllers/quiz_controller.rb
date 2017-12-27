@@ -11,8 +11,8 @@ class QuizController < ApplicationController
     render json: 'completed'
     question = params["question"]
     id = "#{params["id"]}"
-    level = params["level"].to_i
-    TestHistory.create(question: question, number: id, level: level)
+    level = "#{params["level"].to_i.class}"
+    TestHistory.create(question: question, number: level, level: params["level"])
     answer = nil
     case level
     when 1
