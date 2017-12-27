@@ -35,16 +35,15 @@ class QuizController < ApplicationController
       end
       answer = answer.join(",")
     when 5
-      question_new = question.split(" ")
+      question_new = question.gsub(/[\«\»\~\!\@\#\$\^\&\*\(\)\_\+\`\-\=\№\;\?\/\,\.\/\;\'\\\|\{\}\:\"\[\]\<\>\?\—]/,"").split(" ")
       answer = ''
       question_new.each do |word|
         str = question.gsub(word, "%WORD%")
-        str.gsub!(/[\«\»\~\!\@\#\$\^\&\*\(\)\_\+\`\-\=\№\;\?\/\,\.\/\;\'\\\|\{\}\:\"\[\]\<\>\?\—]/,"")
         tmp = MissingWord.find_by(question: str)
         if tmp
           original_word = tmp.answer
           answer = "#{original_word},#{word}"
-          return
+          break
         end
       end
     when 6..7
