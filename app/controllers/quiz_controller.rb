@@ -6,7 +6,6 @@ class QuizController < ApplicationController
   end
 
   def index
-    starting_time = Time.now
     question = params["question"]
     id = params["id"]
     level = params["level"].to_i
@@ -76,7 +75,7 @@ class QuizController < ApplicationController
     }
     response = Net::HTTP.post_form(uri, parameters)
     render json: 'completed'
-    History.create(question: question, identifier: id, level: level, time: (Time.now - starting_time), answer: answer)
+    History.create(question: question, identifier: id, level: level, answer: answer)
 
   end
 end
