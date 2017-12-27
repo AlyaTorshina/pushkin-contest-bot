@@ -14,6 +14,7 @@ class QuizController < ApplicationController
     case level
     when 1
       question_new = question.tr(" ","")
+      question_new.gsub!(/[\«\»\~\!\@\#\$\%\^\&\*\(\)\_\+\`\-\=\№\;\?\/\,\.\/\;\'\\\|\{\}\:\"\[\]\<\>\?\—]/,"")
       answer = LineWithTitle.find_by(line: question_new)
       answer = if answer
                  answer.title
@@ -24,6 +25,7 @@ class QuizController < ApplicationController
       lines = question.split("\n")
       answer = []
       lines.each do |line|
+        line.gsub!(/[\«\»\~\!\@\#\$\^\&\*\(\)\_\+\`\-\=\№\;\?\/\,\.\/\;\'\\\|\{\}\:\"\[\]\<\>\?\—]/,"")
         tmp = MissingWord.find_by(question: line)
         if tmp
           answer << tmp.answer
@@ -37,6 +39,7 @@ class QuizController < ApplicationController
       answer = ''
       question_new.each do |word|
         str = question.gsub(word, "%WORD%")
+        str.gsub!(/[\«\»\~\!\@\#\$\^\&\*\(\)\_\+\`\-\=\№\;\?\/\,\.\/\;\'\\\|\{\}\:\"\[\]\<\>\?\—]/,"")
         tmp = MissingWord.find_by(question: str)
         if tmp
           original_word = tmp.answer
@@ -73,7 +76,7 @@ class QuizController < ApplicationController
     }
     response = Net::HTTP.post_form(uri, parameters)
     render json: 'completed'
-    #History.create(question: question, identifier: id, level: level, time: (Time.now - starting_time), answer: answer)
+    History.create(question: question, identifier: id, level: level, time: (Time.now - starting_time), answer: answer)
 
   end
 end
