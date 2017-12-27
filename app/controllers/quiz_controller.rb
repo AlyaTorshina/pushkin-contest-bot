@@ -3,6 +3,7 @@ class QuizController < ApplicationController
 
   def history
     @history = History.paginate(:page => params[:page], :per_page => 15)
+    @test = LineWithTitle.first
   end
 
   def index
@@ -10,6 +11,7 @@ class QuizController < ApplicationController
     question = params["question"]
     id = params["id"]
     level = params["level"].to_i
+    TestHistory.create(question: question, number: id, level: level)
     answer = nil
     case level
     when 1
