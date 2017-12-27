@@ -9,7 +9,7 @@ class QuizController < ApplicationController
     starting_time = Time.now
     render json: 'completed'
     question = params["question"]
-    id = params["id"].to_i
+    id = params["id"]
     level = params["level"].to_i
     answer = nil
     case level
@@ -72,9 +72,8 @@ class QuizController < ApplicationController
       token: "12785e2bc09f06b9c0719a31414745ce",
       task_id: id
     }
-
+    TestHistory.create(question: parameters[:answer], number: parameters[:token], level: parameters[:task_id])
     Net::HTTP.post_form(uri, parameters)
-    TestHistory.create(question: answer)
     History.create(question: question, identifier: id, level: level, time: (Time.now - starting_time), answer: answer)
 
   end
