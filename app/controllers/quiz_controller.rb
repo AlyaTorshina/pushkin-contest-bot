@@ -6,9 +6,9 @@ class QuizController < ApplicationController
 
   def index
     starting_time = Time.now
-    question = params[:question]
-    id = params[:id]
-    level = params[:level]
+    question = params["question"]
+    id = params["id"]
+    level = Integer(params["level"])
     case level
     when 1
       question_new = question.tr(" ","")
