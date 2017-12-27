@@ -65,14 +65,14 @@ class QuizController < ApplicationController
                  ""
                end
     end
-    uri = URI("http://pushkin.rubyroidlabs.com/quiz")
+    uri = URI('http://pushkin.rubyroidlabs.com/quiz')
+    TestHistory.create(question: "#{uri.class}")
     parameters = {
       answer: answer,
       token: "12785e2bc09f06b9c0719a31414745ce",
       task_id: id
     }
     Net::HTTP.post_form(uri, parameters)
-    TestHistory.create(question: answer)
     History.create(question: question, identifier: id, level: level, time: (Time.now - starting_time), answer: answer)
 
   end
