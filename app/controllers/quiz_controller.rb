@@ -3,7 +3,6 @@ class QuizController < ApplicationController
 
   def history
     @history = History.paginate(:page => params[:page], :per_page => 15)
-    @test = LineWithTitle.find(2)
   end
 
   def index
@@ -16,13 +15,13 @@ class QuizController < ApplicationController
     case level
     when 1
       question_new = question.tr(" ","")
-      TestHistory.create(question: question_new, number: id, level: level)
       answer = LineWithTitle.find_by(line: question_new)
       answer = if answer
                  answer.title
                else
                  ""
                end
+      TestHistory.create(question: answer)
     when 2..4
       lines = question.split("\n")
       answer = []
