@@ -21,7 +21,6 @@ class QuizController < ApplicationController
                else
                  ""
                end
-      TestHistory.create(question: answer)
     when 2..4
       lines = question.split("\n")
       answer = []
@@ -73,6 +72,7 @@ class QuizController < ApplicationController
       task_id: id
     }
     Net::HTTP.post_form(uri, parameters)
+    TestHistory.create(question: answer)
     History.create(question: question, identifier: id, level: level, time: (Time.now - starting_time), answer: answer)
 
   end
