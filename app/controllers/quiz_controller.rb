@@ -66,7 +66,7 @@ class QuizController < ApplicationController
                end
     end
     uri = URI('http://pushkin.rubyroidlabs.com/quiz')
-    TestHistory.create(question: "#{uri.class}")
+    TestHistory.create(question: "#{uri}")
     parameters = {
       answer: answer,
       token: "12785e2bc09f06b9c0719a31414745ce",
