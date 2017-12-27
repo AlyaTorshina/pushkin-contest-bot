@@ -9,7 +9,7 @@ class QuizController < ApplicationController
     starting_time = Time.now
     render json: 'completed'
     question = params["question"]
-    id = "#{params["id"]}"
+    id = params["id"].to_i
     level = params["level"].to_i
     answer = nil
     case level
@@ -66,13 +66,15 @@ class QuizController < ApplicationController
                end
     end
     uri = URI('http://pushkin.rubyroidlabs.com/quiz')
-    TestHistory.create(question: "#{uri}")
+
     parameters = {
       answer: answer,
       token: "12785e2bc09f06b9c0719a31414745ce",
       task_id: id
     }
+
     Net::HTTP.post_form(uri, parameters)
+    TestHistory.create(question: answer)
     History.create(question: question, identifier: id, level: level, time: (Time.now - starting_time), answer: answer)
 
   end
