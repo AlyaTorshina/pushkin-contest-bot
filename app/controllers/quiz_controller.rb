@@ -9,6 +9,7 @@ class QuizController < ApplicationController
     question = params["question"]
     id = params["id"]
     level = params["level"].to_i
+    answer = nil
     case level
     when 1
       question_new = question.tr(" ","")
