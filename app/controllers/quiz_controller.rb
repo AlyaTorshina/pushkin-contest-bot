@@ -3,7 +3,7 @@ class QuizController < ApplicationController
 
   def history
     @history = History.paginate(:page => params[:page], :per_page => 15)
-    @test = LineWithTitle.first
+    @test = LineWithTitle.find(2)
   end
 
   def index
@@ -11,12 +11,12 @@ class QuizController < ApplicationController
     render json: 'completed'
     question = params["question"]
     id = "#{params["id"]}"
-    level = "#{params["level"].to_i.class}"
-    TestHistory.create(question: question, number: level, level: params["level"])
+    level = params["level"].to_i
     answer = nil
     case level
     when 1
       question_new = question.tr(" ","")
+      TestHistory.create(question: question_new, number: id, level: level)
       answer = LineWithTitle.find_by(line: question_new)
       answer = if answer
                  answer.title
