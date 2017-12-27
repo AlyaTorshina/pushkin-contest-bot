@@ -8,7 +8,7 @@ class QuizController < ApplicationController
     starting_time = Time.now
     question = params["question"]
     id = params["id"]
-    level = Integer(params["level"])
+    level = params["level"].to_i
     case level
     when 1
       question_new = question.tr(" ","")
