@@ -1,11 +1,16 @@
 <h1>sup</h1>
 <table>
+     <tr>
+       <th>Вопрос</th>
+       <th>ID</th>
+       <th>Уровень</th>
+       <th>Ответ</th>
+     </tr>
      <% @history.each do |item| %>
      <tr>
        <td><%= item.question %></td>
        <td><%= item.identifier %></td>
        <td><%= item.level %></td>
-       <td><%= item.time %></td>
        <td><%= item.answer %></td>
      </tr>
      <% end %>

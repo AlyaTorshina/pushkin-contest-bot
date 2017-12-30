@@ -2,7 +2,7 @@ class QuizController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   def history
-    @history = History.paginate(:page => params[:page], :per_page => 15)
+    @history = History.paginate(:page => params[:page], :per_page => 50)
   end
 
   def index
